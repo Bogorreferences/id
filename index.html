@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tentang Kami — Bogorreferences</title>
+
+  <!-- CSS UTAMA -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- FONT AWESOME (ICON IG) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+
+<body>
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="nav-container">
+
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.png" alt="Bogorreferences Logo" class="logo-img">
+      <span>Bogorreferences</span>
+    </a>
+
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+      <ul class="nav-menu" id="menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="rekomendasi.html">Rekomendasi</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- hero section -->
+  <section class="hero" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80');">
+    <div class="container">
+      <h1>Welcome To BogorReferences</h1>
+      <p class="hero-subtitle">
+        Panduan Kuliner, Nongkrong, dan Wisata Terbaik Di Bogor
+      </p>
+      <p class="hero-desc">
+        Kami mengkurasi tempat makan, kafe, dan destinasi wisata di bogor yang benar-benar layak dikunjungi.
+        ringkas, jujur, dan relevan untuk warga lokal maupun wisatawan.
+      </p>
+
+      <div class="hero-cta">
+        <a href="rekomendasi.html" class="btn primary">Lihat Rekomendasi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- tentang bogorreferences -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Tentang Bogorreferences</h2>
+      <div class="underline"></div>
+
+      <p class="section-desc">
+        Bogorreferences adalah media digital lokal yang menyajikan rekomendasi kuliner,
+        tempat nongkrong, dan wisata di wilayah bogor dan sekitarnya.
+      </p>
+
+      <p class="section-desc">
+        Kami hadir untuk membantu kamu menemukan tempat terbaik tanpa harus membuang waktu
+        mencoba semuanya satu per satu. semua rekomendasi dikurasi berdasarkan pengalaman,
+        riset, dan sudut pandang yang objektif.
+      </p>
+    </div>
+  </section>
+
+  <!-- apa yang kami rekomendasikan -->
+  <section class="section gray">
+    <div class="container">
+      <h2 class="section-title">Apa yang kami rekomendasikan</h2>
+      <div class="underline"></div>
+
+      <div class="grid-auto">
+        <div class="card">
+          <span class="emoji">🍜</span>
+          <h3>Kuliner</h3>
+          <p>Rekomendasi tempat makan lokal, umkm, hingga hidden gem di bogor.</p>
+        </div>
+
+        <div class="card">
+          <span class="emoji">☕</span>
+          <h3>Caffee & Nongkrong</h3>
+          <p>Tempat ngopi, kerja, dan quality time yang nyaman.</p>
+        </div>
+
+        <div class="card">
+          <span class="emoji">🌿</span>
+          <h3>Wisata & Staycation</h3>
+          <p>Destinasi alam, villa, dan penginapan pilihan di bogor.</p>
+        </div>
+
+        <div class="card">
+          <span class="emoji">💸</span>
+          <h3>Budget Friendly</h3>
+          <p>Tempat seru yang ramah di kantong.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- kenapa bogorreferences -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Kenapa Bogorreferences?</h2>
+      <div class="underline"></div>
+
+      <div class="card">
+        <ul class="list">
+          <li>Fokus pada wilayah Bogor</li>
+          <li>Kurasi tempat secara Jujur & Relevan</li>
+        </ul>
+        <ul class="list">
+          <li>Informasi singkat dan Mudah dipahami</li>
+          <li>Mendukung UMKM & Bisnis Lokal</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="pro-footer">
+
+  <div class="container footer-wrap">
+
+    <!-- LOGO KIRI -->
+    <div class="footer-left">
+      <img src="assets/images/logo.png"
+           alt="Bogorreferences Logo"
+           class="footer-logo">
+    </div>
+
+    <!-- TENGAH -->
+    <div class="footer-center">
+      <h3>Bogorreferences</h3>
+      <p>Media Referensi Lokal Bogor</p>
+      <p>Kuliner • Wisata • Lifestyle</p>
+    </div>
+
+    <!-- KANAN -->
+    <div class="footer-right">
+      <h4>Get in touch</h4>
+
+      <a href="https://instagram.com/bogorreferences"
+         target="_blank"
+         class="ig-icon"
+         aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <p class="footer-email">bogorreferences@email.com</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
