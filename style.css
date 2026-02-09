@@ -1,0 +1,566 @@
+/* =========================
+   root & reset
+========================= */
+
+:root {
+  --primary: #0a5c3e;
+  --accent: #f9a825;
+  --dark: #1a1a1a;
+  --gray: #f5f5f5;
+  --text: #333;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, blinkmacsystemfont, "segoe ui", sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: #fff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   layout helpers
+========================= */
+
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 var(--space-sm);
+}
+
+.section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+.section.gray {
+  background: var(--gray);
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: var(--primary);
+  margin-bottom: var(--space-sm);
+}
+
+.section-desc {
+  max-width: 800px;
+  margin: 0 auto var(--space-md);
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+}
+
+.underline {
+  width: 70px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0 auto var(--space-md);
+}
+
+/* =========================
+   navbar
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0,0,0,.85);
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo-box {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* =========================
+   hero & page hero
+========================= */
+
+.hero,
+.page-hero {
+  position: relative;
+  margin-top: 70px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 1rem;
+}
+
+.hero {
+  height: 100vh;
+}
+
+.page-hero {
+  height: 60vh;
+}
+
+.hero::before,
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+}
+
+.hero > *,
+.page-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* shared hero title */
+.hero h1,
+.page-hero h1 {
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.8px;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 14px 40px rgba(0,0,0,.5);
+}
+
+/* homepage hero (besar tapi aman) */
+.hero h1 {
+  font-size: clamp(56px, 8vw, 96px);
+}
+
+/* page hero (about, partnership, contact) */
+.page-hero h1 {
+  font-size: clamp(34px, 5vw, 52px);
+}
+
+.hero p,
+.page-hero p {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  opacity: 0.9;
+}
+
+/* hero button */
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* =========================
+   buttons
+========================= */
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: .3s ease;
+}
+
+.btn:hover {
+  background: #f57f17;
+  transform: translatey(-3px);
+  box-shadow: 0 10px 20px rgba(249,168,37,.3);
+}
+
+/* =========================
+   cards & grids
+========================= */
+
+.card {
+  background: #fff;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translatey(-6px);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+/* =========================
+   contact page
+========================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.contact-box {
+  background: #fff;
+  padding: 2.25rem 2rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+
+/* =========================
+   responsive
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    height: 85vh;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 10vw, 52px);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(30px, 7vw, 40px);
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,.95);
+    flex-direction: column;
+    display: none;
+    padding: var(--space-md);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+}
+
+/* =========================
+   gambar
+========================= */
+.about-img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 10px;
+  margin: auto;
+  display: block;
+}
+
+/* ===== FOOTER PREMIUM MINIMAL ===== */
+
+.pro-footer {
+  background: linear-gradient(135deg, #0f1720, #0b1118);
+  color: #ddd;
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-logo {
+  width: 85px;
+}
+
+.footer-center h3 {
+  color: #fff;
+  margin-bottom: .5rem;
+}
+
+.footer-center p {
+  font-size: .9rem;
+  color: #aaa;
+  margin: 2px 0;
+}
+
+.footer-right h4 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.ig-icon img:hover {
+  transform: scale(1.15);
+}
+
+.footer-email {
+  margin-top: .7rem;
+  font-size: .85rem;
+  color: #aaa;
+}
+
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .footer-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: auto;
+    width: 70px;
+  }
+
+  .ig-icon img {
+    width: 32px;
+  }
+}
+
+/* ===== LOGO ===== */
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer-social-icons a {
+  color: #ffffff;
+  font-size: 28px;
+  opacity: 0.85;
+  transition: 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+
+/* ===== ANALOGIC STYLE FOOTER ===== */
+.analogic-footer {
+  background: #0b1118;
+  padding: 1.5rem 0;
+}
+
+.analogic-footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.analogic-footer-logo {
+  height: 32px;
+  opacity: 0.9;
+}
+
+.analogic-footer-ig {
+  color: #fff;
+  font-size: 20px;
+  opacity: 0.75;
+  transition: 0.25s ease;
+}
+
+.analogic-footer-ig:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+@media (max-width: 600px) {
+  .analogic-footer-inner {
+    flex-direction: row;
+  }
+}
+
+/* ===== FOOTER INSTAGRAM ICON ===== */
+.ig-icon {
+  display: inline-block;
+  color: #fff;
+  font-size: 26px;
+  margin-top: 0.5rem;
+  opacity: 0.85;
+  transition: 0.3s ease;
+}
+
+.ig-icon:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* ===== VISI MISI MODERN ===== */
+.vm-section {
+  background: #f8f9fa;
+}
+
+.grid-vm {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
+}
+
+.vm-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.vm-title {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.vm-text,
+.vm-list li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 0.6rem;
+}
+
+.vm-list {
+  list-style: disc;
+  padding-left: 1.4rem;
+}
+
+/* ===== WHY SECTION ===== */
+.why-section {
+  background: #fff;
+  text-align: center;
+}
+
+.why-content {
+  max-width: 840px;
+  margin: auto;
+}
+
+.why-text {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 1rem;
+  line-height: 1.75;
+}
+
+
